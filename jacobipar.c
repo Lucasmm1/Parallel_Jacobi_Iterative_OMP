@@ -1,3 +1,12 @@
+/*
+######################################################
+# - Caíque Honorio Cardoso 			- NºUSP: 8910222  #
+# - Erika Hortência Pereira Cardoso - NºUSP: 10696830 #
+# - Gabriel Cazzini Cardoso 		- NºUSP: 12547771 #
+# - Lucas Machado Marinho 			- NºUSP: 11916645 #
+#######################################################
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -113,42 +122,6 @@ int main(int argc, char *argv[]){
     //Término da contagem de tempo
     wtime1 = omp_get_wtime() - wtime1;
 
-    /*
-        printf("\nO melhor resultado é: \n");
-    for(i=0; i<n; i++){
-        printf("x%d = %Lf ", i, X_atual[i]);
-    }
-    printf("\n");
-    */
-
-    /*wtime2 = omp_get_wtime();
-
-    //Comparação de resultado
-    int escolha;
-    printf("\nQual equação você deseja testar?\n");
-    scanf("%d", &escolha);
-
-    printf("\nA equação escolhida foi: \n");
-    printf("%d) ", escolha);
-    for(j=0; j<n; j++){
-        if(j != (n-1)){
-            printf("%0.Lf x%d + ", A[escolha][j], j);
-        }else{
-            printf("%0.Lf x%d = ", A[escolha][j], j);
-        }
-    }
-    printf("%0.Lf \n", B[escolha]);
-
-    long double conta = 0;
-
-    for(j=0; j<n; j++){
-            conta += A[escolha][j]*X_atual[j];
-    }
-
-    printf("\nResultado ideal da equação escolhida: %Lf\n", B[escolha]);
-    printf("Resultado obtido da equação escolhida: %Lf \n\n", conta);*/
-
-
     //liberando memória
     for(i=0; i<n; i++){
         free(A[i]);
@@ -158,7 +131,6 @@ int main(int argc, char *argv[]){
     free(X_anterior);
     free(X_atual);
 
-    wtime2 = omp_get_wtime() - wtime2;
     printf("O tempo foi de: %lf\n", (wtime1));
 
     return 0;
